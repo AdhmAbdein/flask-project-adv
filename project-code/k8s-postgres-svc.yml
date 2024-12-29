@@ -8,4 +8,6 @@ spec:
     postgres: deploy
   ports:
     - port: 5432
-      protocol: TCP    
+      protocol: TCP 
+      targetPort: 5432
+
