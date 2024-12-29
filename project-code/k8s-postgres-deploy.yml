@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: postgres-deploy
   labels:
-    postgres: deploly
+    postgres: deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      postgres: deploly
+      postgres: deploy
   template:
     metadata:
       labels:
-        postgres: deploly
+        postgres: deploy
     spec:
       containers:
         - name: postgres-pod
@@ -21,11 +21,11 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_USER
-              value: adham
+              value: "adham"
             - name: POSTGRES_PASSWORD
-              value: 1234
-            - name: POSTGRES-DB
-              value: devopsDB
+              value: "1234"
+            - name: POSTGRES_DB
+              value: "devopsDB"
           volumeMounts:
             - name: postgres-vol
               mountPath: /var/lib/postgresql/data
