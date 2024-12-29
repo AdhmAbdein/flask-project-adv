@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deploy
+  labels:
+    flask: deploy  
+spec:
+  replicas: 3
+  selector:
+    flask: deploy
+  template:
+    metadata:
+      - name: flask-pod
+        labels:
+          flask: deploy
+    spec:
+      containers:
+        - name: flask-cont
+          image: adhmabdein/myflaskimg2
+          ports:
+            - containerPort: 5000
+          env:
+            - name: FLASK_ENV
+              value: "production"
+            - name: SQLALCHEMY_DATABASE_URI
+              value: "postgresql://adham:1234@postgres-service:5432/devopsDB"
+
