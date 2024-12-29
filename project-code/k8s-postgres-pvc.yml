@@ -3,7 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: postgres-pvc
 spec:
-  volumeName: postgres-pv
   accessModes:
     - ReadWriteMany
   resources:

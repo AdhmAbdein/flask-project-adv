@@ -7,5 +7,5 @@ spec:
     postgres: deploy
   ports:
     - port: 5432
+      targetPort: 5432
       protocol: TCP 
-  clusterIP: None
