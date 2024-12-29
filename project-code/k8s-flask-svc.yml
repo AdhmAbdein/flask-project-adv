@@ -7,7 +7,7 @@ spec:
   selector:
     flask: deploy
   ports:
-    - prortocol: TCP
+    - protocol: TCP
       nodePort: 30009
       port: 80
       targetPort: 5000    
