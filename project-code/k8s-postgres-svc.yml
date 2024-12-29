@@ -3,11 +3,9 @@ kind: Service
 metadata:
   name: postgres-service
 spec:
-  type: ClusterIP
   selector:
     postgres: deploy
   ports:
     - port: 5432
       protocol: TCP 
-      targetPort: 5432
-
+  clusterIP: None
