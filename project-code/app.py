@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
+from urllib.parse import quote as url_quote
 
 app = Flask(__name__)
 app.config.from_object(Config)
