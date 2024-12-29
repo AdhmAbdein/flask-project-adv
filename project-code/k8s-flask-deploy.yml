@@ -7,12 +7,13 @@ metadata:
 spec:
   replicas: 3
   selector:
-    flask: deploy
+    matchLabels:
+      flask: deploy
   template:
     metadata:
-      - name: flask-pod
-        labels:
-          flask: deploy
+      name: flask-pod
+      labels:
+        flask: deploy
     spec:
       containers:
         - name: flask-cont
