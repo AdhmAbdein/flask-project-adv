@@ -28,7 +28,7 @@ spec:
               value: "devopsDB"
           volumeMounts:
             - name: postgres-vol
-              mountPath: /var/lib/postgresql/data
+              mountPath: /data
       volumes:
         - name: postgres-vol
           persistentVolumeClaim:
