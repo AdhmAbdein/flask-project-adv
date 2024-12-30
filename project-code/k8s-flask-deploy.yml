@@ -28,4 +28,13 @@ spec:
             - name: POSTGRES_DB
               value: "devopsDB"
             - name: POSTGRES_HOST
-              value: "postgres-service"    
+              value: "postgres-service"  
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+      
