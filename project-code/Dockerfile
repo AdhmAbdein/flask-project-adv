@@ -16,11 +16,12 @@ COPY ./project-code /app
 RUN pip install --upgrade pip
 
 # Install Python dependencies from requirements.txt
+# Pin Flask and Werkzeug to compatible versions in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the Flask application port
 EXPOSE 5000
 
-# Run the application
-CMD ["python", "app.py"]
+# Use gunicorn for running the app in production
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
 
