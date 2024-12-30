@@ -24,7 +24,9 @@ class UserInfo(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     message = db.Column(db.String(500), nullable=False)
-
+# Automatically create tables (if not already created)
+with app.app_context():
+    db.create_all()
 # Route to display and handle the form
 @app.route('/', methods=['GET', 'POST'])
 def index():
